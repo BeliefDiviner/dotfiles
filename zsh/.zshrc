@@ -8,6 +8,9 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+# Heavily based on, up-to straight-up copy-pase, 
+# (1) https://github.com/Phantas0s/.dotfiles
+# (2) https://thevaluable.dev/zsh-install-configure-mouseless/
 # Navigation.
 setopt AUTO_CD              # Go to folder path without using cd.
 
