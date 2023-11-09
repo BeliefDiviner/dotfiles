@@ -39,3 +39,9 @@ source $ZDOTDIR/.aliases
 # Completion.
 source $ZDOTDIR/completion.zsh
 
+# Autosuggestions.
+source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Syntax highlight.
+source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
