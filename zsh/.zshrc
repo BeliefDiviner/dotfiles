@@ -36,3 +36,6 @@ eval "$(dircolors -b $ZDOTDIR/.dircolors)"
 # Aliases.
 source $ZDOTDIR/.aliases
 
+# Completion.
+source $ZDOTDIR/completion.zsh
+
