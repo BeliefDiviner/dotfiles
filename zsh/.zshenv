@@ -7,3 +7,9 @@ export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
 
+# docker
+export DOCKER_HOST="unix:///mnt/wsl/shared-docker/docker.sock"
+
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
+
