@@ -48,3 +48,6 @@ source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Syntax highlight.
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# WSL integration.
+source $ZDOTDIR/.wsl
+
