@@ -1,1 +1,11 @@
+# General.
 alias ll='ls -l --color'
+alias lla='ls -la --color'
+
+# Git.
+alias gs='git status'
+alias gl='git log'
+alias glo='git log --oneline'
+
+alias ga='git add'
+
