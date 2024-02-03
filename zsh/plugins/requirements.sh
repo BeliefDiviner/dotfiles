@@ -1,4 +1,2 @@
-git clone https://github.com/zsh-users/zsh-completions.git
-git clone https://github.com/zsh-users/zsh-autosuggestions.git
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone --depth 1 -- git@github.com:marlonrichert/zsh-autocomplete.git
 

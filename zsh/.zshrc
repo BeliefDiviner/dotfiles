@@ -1,3 +1,7 @@
+# SSH keychain.
+/usr/bin/keychain --quiet ~/.ssh/git-private
+source ~/.keychain/$(uname -n)-sh
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -8,7 +12,9 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-# Heavily based on, up-to straight-up copy-pase, 
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# Heavily based on, up to straight-up copy-pase, 
 # (1) https://github.com/Phantas0s/.dotfiles
 # (2) https://thevaluable.dev/zsh-install-configure-mouseless/
 # Navigation.
@@ -40,13 +46,13 @@ eval "$(dircolors -b $ZDOTDIR/.dircolors)"
 source $ZDOTDIR/.aliases
 
 # Completion.
-source $ZDOTDIR/completion.zsh
+source $ZDOTDIR/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Autosuggestions.
-source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
 
 # Syntax highlight.
-source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # WSL integration.
 source $ZDOTDIR/.wsl
