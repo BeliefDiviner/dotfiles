@@ -29,6 +29,11 @@ return {
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    "mfussenegger/nvim-lint",
+    {
+        "stevearc/conform.nvim",
+        opts = {},
+    },
 
     -- NeoVim environement helpers.
     "folke/neodev.nvim",
