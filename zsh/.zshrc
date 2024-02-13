@@ -40,7 +40,10 @@ setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 
 # Dircolours.
-eval "$(dircolors -b $ZDOTDIR/.dircolors)"
+# eval "$(dircolors -b $ZDOTDIR/.dircolors)"
+
+# History.
+source $ZDOTDIR/.hist
 
 # Aliases.
 source $ZDOTDIR/.aliases
