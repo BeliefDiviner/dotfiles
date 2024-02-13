@@ -1,5 +1,6 @@
 # SSH keychain.
-/usr/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
+# /usr/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
+$(brew --prefix)/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
 source ~/.keychain/$(uname -n)-sh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
@@ -12,7 +13,8 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 # Heavily based on, up to straight-up copy-pase, 
 # (1) https://github.com/Phantas0s/.dotfiles
@@ -52,11 +54,13 @@ source $ZDOTDIR/.aliases
 source $ZDOTDIR/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Autosuggestions.
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
+# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh 
 
 # Syntax highlight.
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # WSL integration.
-source $ZDOTDIR/.wsl
+# source $ZDOTDIR/.wsl
 
