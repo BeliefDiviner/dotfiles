@@ -1,5 +1,5 @@
 # SSH keychain.
-/usr/bin/keychain --quiet ~/.ssh/git-private
+/usr/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
 source ~/.keychain/$(uname -n)-sh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
