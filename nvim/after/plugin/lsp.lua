@@ -151,6 +151,7 @@ require("conform").formatters.injected = {
 			latex = "tex",
 			markdown = "md",
 			python = "py",
+			lua = "lua",
 		},
 	},
 }
