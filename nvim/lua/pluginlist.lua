@@ -1,11 +1,5 @@
 return {
 	{
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	},
-	{
 		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
 		config = function()
@@ -33,6 +27,25 @@ return {
 		end,
 	},
 
+	-- tmux pane switching integration.
+	{
+		"alexghergh/nvim-tmux-navigation",
+		config = function()
+			local nvim_tmux_nav = require("nvim-tmux-navigation")
+
+			nvim_tmux_nav.setup({
+				disable_when_zoomed = true, -- defaults to false
+			})
+
+			vim.keymap.set("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+			vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+			vim.keymap.set("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+			vim.keymap.set("n", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+			-- vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
+			-- vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+		end,
+	},
+
 	-- Language Server Protocol config helpers.
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
@@ -44,6 +57,12 @@ return {
 	},
 
 	-- Developer tools.
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	},
 	"lewis6991/gitsigns.nvim",
 	"sindrets/diffview.nvim",
 	{
@@ -52,16 +71,16 @@ return {
 		opts = {},
 	},
 	"folke/lsp-colors.nvim",
-	{
-		"nvimdev/lspsaga.nvim",
-		config = function()
-			require("lspsaga").setup({})
-		end,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-tree/nvim-web-devicons",
-		},
-	},
+	-- {
+	-- 	"nvimdev/lspsaga.nvim",
+	-- 	config = function()
+	-- 		require("lspsaga").setup({})
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	-- },
 
 	-- NeoVim environement helpers.
 	"folke/neodev.nvim",
