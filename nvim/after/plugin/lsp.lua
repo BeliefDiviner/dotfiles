@@ -16,10 +16,6 @@ local on_attach = function(_, bufnr)
 	bufmap("<leader>S", require("telescope.builtin").lsp_dynamic_workspace_symbols)
 
 	bufmap("K", vim.lsp.buf.hover)
-
-	-- vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-	--  vim.lsp.buf.format()
-	-- end, {})
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -96,6 +92,8 @@ require("mason-lspconfig").setup_handlers({
 require("lint").linters_by_ft = {
 	lua = { "selene" },
 	python = { "ruff" },
+	markdown = { "vale" },
+	latex = { "vale" },
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
@@ -110,6 +108,8 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		python = { "isort", "black" },
+		makrdown = { "mdformat" },
+		latex = { "latexindent", "bibtex-tidy" },
 	},
 
 	format_on_save = function(bufnr)

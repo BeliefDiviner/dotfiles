@@ -84,4 +84,19 @@ return {
 	-- Git support.
 	"lewis6991/gitsigns.nvim",
 	"sindrets/diffview.nvim",
+
+	-- LaTeX.
+	"lervag/vimtex",
+
+	-- Markdown.
+	{
+		"lukas-reineke/headlines.nvim",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = true, -- or `opts = {}`
+	},
+	{
+		"ellisonleao/glow.nvim",
+		config = true,
+		cmd = "Glow",
+	},
 }
