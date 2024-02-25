@@ -1,10 +1,10 @@
 # SSH keychain.
 if [[ $(uname) == "Darwin" ]]; then
     $(brew --prefix)/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
-    source ~/.keychain/$(uname -n)-sh
 elif [[ $(uname -r | grep "WSL") ]]; then
     /usr/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
 fi
+source ~/.keychain/$(uname -n)-sh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
