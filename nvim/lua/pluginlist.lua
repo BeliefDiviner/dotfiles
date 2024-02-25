@@ -43,6 +43,26 @@ return {
 		opts = {},
 	},
 
+	-- Developer tools.
+	"lewis6991/gitsigns.nvim",
+	"sindrets/diffview.nvim",
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {},
+	},
+	"folke/lsp-colors.nvim",
+	{
+		"nvimdev/lspsaga.nvim",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
+
 	-- NeoVim environement helpers.
 	"folke/neodev.nvim",
 
@@ -80,10 +100,6 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 	},
-
-	-- Git support.
-	"lewis6991/gitsigns.nvim",
-	"sindrets/diffview.nvim",
 
 	-- LaTeX.
 	"lervag/vimtex",
