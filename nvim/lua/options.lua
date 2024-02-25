@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\"
 
 vim.o.clipboard = "unnamedplus"
 if vim.fn.has("wsl") == 1 then
