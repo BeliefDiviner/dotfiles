@@ -71,16 +71,6 @@ return {
 		opts = {},
 	},
 	"folke/lsp-colors.nvim",
-	-- {
-	-- 	"nvimdev/lspsaga.nvim",
-	-- 	config = function()
-	-- 		require("lspsaga").setup({})
-	-- 	end,
-	-- 	dependencies = {
-	-- 		"nvim-treesitter/nvim-treesitter",
-	-- 		"nvim-tree/nvim-web-devicons",
-	-- 	},
-	-- },
 
 	-- NeoVim environement helpers.
 	"folke/neodev.nvim",
