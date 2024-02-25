@@ -1,7 +1,10 @@
 # SSH keychain.
-# /usr/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
-$(brew --prefix)/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
-source ~/.keychain/$(uname -n)-sh
+if [[ $(uname) == "Darwin" ]]; then
+    $(brew --prefix)/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
+    source ~/.keychain/$(uname -n)-sh
+elif [[ $(uname -r | grep "WSL") ]]; then
+    /usr/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -13,8 +16,11 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-# source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
+if [[ $(uname) == "Darwin" ]]; then
+    source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
+elif [[ $(uname -r | grep "WSL") ]]; then
+    source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 # Heavily based on, up to straight-up copy-pase, 
 # (1) https://github.com/Phantas0s/.dotfiles
@@ -42,7 +48,9 @@ setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 
 # Dircolours.
-# eval "$(dircolors -b $ZDOTDIR/.dircolors)"
+if [[ $(uname -r | grep "WSL") ]]; then
+    eval "$(dircolors -b $ZDOTDIR/.dircolors)"
+fi
 
 # History.
 source $ZDOTDIR/.hist
@@ -54,13 +62,20 @@ source $ZDOTDIR/.aliases
 source $ZDOTDIR/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Autosuggestions.
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh 
+if [[ $(uname) == "Darwin" ]]; then
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh 
+elif [[ $(uname -r | grep "WSL") ]]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
+fi
 
 # Syntax highlight.
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ $(uname) == "Darwin" ]]; then
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [[ $(uname -r | grep "WSL") ]]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
+fi
 
 # WSL integration.
-# source $ZDOTDIR/.wsl
-
+if [[ $(uname -r | grep "WSL") ]]; then
+    source $ZDOTDIR/.wsl
+fi
