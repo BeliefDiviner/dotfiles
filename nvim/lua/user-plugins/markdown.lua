@@ -18,5 +18,8 @@ return {
 		"ellisonleao/glow.nvim",
 		config = true,
 		cmd = "Glow",
+		keys = {
+			{ "<localleader>p", "<Cmd>Glow<CR>", ft = "markdown" },
+		},
 	},
 }
