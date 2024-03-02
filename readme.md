@@ -1,6 +1,5 @@
-# DotFiles. Glorious DotFiles.
-Here's the home for all dotfiles. And notes on setup actions that need to be taken for all configurations to work.
-
+# Dotfiles, glorious dotfiles
+Here's the home for all dotfiles. And notes on setup actions for all configurations.
 ## NVIM
 ### Mason
 
@@ -19,3 +18,9 @@ The following utils are setup using Mason.
 * selene
 * stylua
 * vale
+    * Additional steps
+        ```bash
+        cd ~/.config/vale
+        <mason-vale-install-dir>/vale init 
+        <mason-vale-install-dir>/vale sync 
+        ```
