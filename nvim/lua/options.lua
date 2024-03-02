@@ -36,6 +36,6 @@ vim.o.termguicolors = true
 
 vim.o.mouse = "a"
 
-vim.keymap.set("n", "<Esc><Esc>", "<Cmd>nohlsearch<CR>", { silent = true })
+vim.keymap.set("n", "<leader><Esc>", "<Cmd>nohlsearch<CR>", { silent = true })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", { silent = true })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)

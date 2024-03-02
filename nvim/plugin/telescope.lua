@@ -14,7 +14,6 @@ local select_one_or_multi = function(prompt_bufnr)
 end
 
 local mm = {
-	["<Esc>q"] = require("telescope.actions").close,
 	["<CR>"] = select_one_or_multi,
 }
 
