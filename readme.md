@@ -1,9 +1,9 @@
 # Dotfiles, glorious dotfiles
 Here's the home for all dotfiles. And notes on setup actions for all configurations.
-## NVIM
+## NeoVIM
 ### Mason
 
-The following utils are setup using Mason.
+The following utilities are setup using Mason.
 * bibtex-tidy
 * black
 * cmake-language-server
@@ -21,6 +21,6 @@ The following utils are setup using Mason.
     * Additional steps
         ```bash
         cd ~/.config/vale
-        <mason-vale-install-dir>/vale init 
         <mason-vale-install-dir>/vale sync 
+        <mason-vale-install-dir>/vale init 
         ```
