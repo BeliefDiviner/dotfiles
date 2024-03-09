@@ -1,1 +1,2 @@
-styles/Google
+styles/*
+!styles/config
