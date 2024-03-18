@@ -79,3 +79,6 @@ fi
 if [[ $(uname -r | grep "WSL") ]]; then
     source $ZDOTDIR/.wsl
 fi
+
+# Shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
