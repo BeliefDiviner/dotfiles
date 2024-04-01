@@ -9,6 +9,8 @@ alias glo='git log --oneline'
 
 alias ga='git add'
 
+alias gd='git diff'
+
 # Python
 alias pip='pip3'
 alias python='python3'
