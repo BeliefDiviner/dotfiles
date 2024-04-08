@@ -6,6 +6,7 @@ alias lla='ls -la --color'
 alias gs='git status'
 alias gl='git log'
 alias glo='git log --oneline'
+alias gladog='git log --all --decorate --oneline --graph'
 
 alias ga='git add'
 
