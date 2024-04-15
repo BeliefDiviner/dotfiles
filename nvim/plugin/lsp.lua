@@ -31,9 +31,19 @@ local function get_python_path(workspace)
 
 	-- Find and use virtualenv in workspace directory.
 	for _, pattern in ipairs({ "*", ".*" }) do
-		local match = vim.fn.glob(path.join(workspace, pattern, "pyvenv.cfg"))
-		if match ~= "" then
-			return path.join(path.dirname(match), "bin", "python")
+		-- Check if there's a pyenv.
+		local match_pyenv = vim.fn.glob(path.join(workspace, pattern, "pyvenv.cfg"))
+		if match_pyenv ~= "" then
+			return path.join(path.dirname(match_pyenv), "bin", "python")
+		end
+
+		-- Check if a default poetry env is built.
+		local match_poetry = vim.fn.glob(path.join(workspace, pattern, "poetry.lock"))
+		if match_poetry ~= "" then
+			local res = vim.fn.systemlist({ "poetry", "env", "info", "--executable" })[1]
+			if res ~= "bin/python" then
+				return res
+			end
 		end
 	end
 
