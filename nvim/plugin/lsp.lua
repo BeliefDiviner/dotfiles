@@ -16,6 +16,28 @@ local on_attach = function(_, bufnr)
 	bufmap("<leader>S", require("telescope.builtin").lsp_dynamic_workspace_symbols)
 
 	bufmap("K", vim.lsp.buf.hover)
+
+	-- LSP Signature Help
+	require("lsp_signature").on_attach({
+		bind = true,
+		handler_opts = {
+			border = "rounded",
+		},
+		floating_window = true,
+		hint_enable = false,
+		hint_prefix = "^ ",
+		hint_inline = function()
+			return false
+		end,
+		toggle_key = "<C-k>",
+		toggle_key_flip_floatwin_setting = true,
+		select_signature_key = "<C-l>",
+		zindex = 1,
+		timer_interval = 30,
+	}, bufnr)
+	bufmap("<leader>k", function()
+		require("lsp_signature").toggle_float_win()
+	end)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
