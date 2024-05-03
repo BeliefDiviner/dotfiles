@@ -109,10 +109,18 @@ require("mason-lspconfig").setup_handlers({
 					disableOrganizeImports = true,
 					analysis = {
 						indexing = true,
-						typeCheckingMode = "basic",
-						diagnosticMode = "openFilesOnly",
+						typeCheckingMode = "standard",
+						diagnosticMode = "workspace",
 						autoImportCompletions = false,
 						autoSearchPaths = false,
+						useLibraryCodeForTypes = true,
+
+						-- Additional rules that are not enabled as errors by default
+						reportPropertyTypeMismatch = "error",
+						reportImportCycles = "error",
+						reportWildcardImportFromLibrary = "error",
+						reportUntypedFunctionDecorator = "error",
+						reportUntypedClassDecorator = "error",
 					},
 				},
 			},
