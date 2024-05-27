@@ -1,10 +1,10 @@
 local slow_format_filetypes = {}
 require("conform").setup({
 	formatters_by_ft = {
-		lua = { "stylua" },
-		python = { "isort", "black" },
-		makrdown = { "mdformat" },
 		latex = { "latexindent", "bibtex-tidy" },
+		lua = { "stylua" },
+		makrdown = { "mdformat" },
+		python = { "isort", "black" },
 	},
 
 	format_on_save = function(bufnr)
@@ -44,9 +44,9 @@ require("conform").formatters.injected = {
 		lang_to_ext = {
 			bash = "sh",
 			latex = "tex",
+			lua = "lua",
 			markdown = "md",
 			python = "py",
-			lua = "lua",
 		},
 	},
 }

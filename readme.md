@@ -7,9 +7,11 @@ The following utilities are setup using Mason.
 - bibtex-tidy
 - black
 - cmake-language-server
+- djlint
 - docker-compose-language-service
 - dockerfile-language-server
 - isort
+- jinja-lsp
 - latexindent
 - lua-language-server
 - mdformat
@@ -17,6 +19,7 @@ The following utilities are setup using Mason.
 - ruff
 - selene
 - stylua
+- taplo
 - vale-ls
     Additional steps
     - Install vale system package
