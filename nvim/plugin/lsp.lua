@@ -126,4 +126,14 @@ require("mason-lspconfig").setup_handlers({
 			},
 		})
 	end,
+
+	["ruff"] = function()
+		require("lspconfig").ruff_lsp.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			handlers = {
+				["textDocument/publishDiagnostics"] = function() end,
+			},
+		})
+	end,
 })
