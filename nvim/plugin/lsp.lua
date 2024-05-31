@@ -127,7 +127,7 @@ require("mason-lspconfig").setup_handlers({
 		})
 	end,
 
-	["ruff"] = function()
+	["ruff_lsp"] = function()
 		require("lspconfig").ruff_lsp.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
