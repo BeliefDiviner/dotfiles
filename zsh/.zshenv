@@ -13,9 +13,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export VALE_CONFIG_PATH="$HOME/.config/vale/.vale.ini"
 export VALE_STYLES_PATH="$HOME/.config/vale/styles"
 
-# taplo
-export TAPLO_CONFIG="$HOME/.config/taplo/taplo.toml"
-
 # Homebrew
 if [[ $(uname) == "Darwin" ]]; then
     export HOMEBREW_PREFIX="/opt/homebrew";
