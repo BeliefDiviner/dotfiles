@@ -4,34 +4,34 @@ return {
 	opts = {},
 	keys = {
 		{
-			"<leader>tt",
-			function()
-				require("trouble").toggle()
-			end,
+			"<leader>xx",
+			"<cmd>Trouble diagnostics toggle<cr>",
+			desc = "Diagnostics (Trouble)",
 		},
 		{
-			"<leader>tw",
-			function()
-				require("trouble").toggle("workspace_diagnostics")
-			end,
+			"<leader>xX",
+			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+			desc = "Buffer Diagnostics (Trouble)",
 		},
 		{
-			"<leader>td",
-			function()
-				require("trouble").toggle("document_diagnostics")
-			end,
+			"<leader>cs",
+			"<cmd>Trouble symbols toggle focus=false<cr>",
+			desc = "Symbols (Trouble)",
 		},
 		{
-			"<leader>tq",
-			function()
-				require("trouble").toggle("quickfix")
-			end,
+			"<leader>cl",
+			"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+			desc = "LSP Definitions / references / ... (Trouble)",
 		},
 		{
-			"<leader>tl",
-			function()
-				require("trouble").toggle("loclist")
-			end,
+			"<leader>xL",
+			"<cmd>Trouble loclist toggle<cr>",
+			desc = "Location List (Trouble)",
+		},
+		{
+			"<leader>xQ",
+			"<cmd>Trouble qflist toggle<cr>",
+			desc = "Quickfix List (Trouble)",
 		},
 	},
 }
