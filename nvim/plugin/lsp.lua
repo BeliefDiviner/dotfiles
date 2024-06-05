@@ -1,4 +1,4 @@
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
 	local bufmap = function(keys, func)
 		vim.keymap.set("n", keys, func, { buffer = bufnr })
 	end
@@ -131,9 +131,6 @@ require("mason-lspconfig").setup_handlers({
 		require("lspconfig").ruff_lsp.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			handlers = {
-				["textDocument/publishDiagnostics"] = function() end,
-			},
 		})
 	end,
 })
