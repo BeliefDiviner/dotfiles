@@ -22,7 +22,7 @@ vim.o.scrolloff = 12
 vim.o.number = true
 vim.o.relativenumber = true
 
-vim.o.signcolumn = "yes"
+vim.o.signcolumn = "yes:2"
 
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
