@@ -4,7 +4,7 @@ require("conform").setup({
 		latex = { "latexindent", "bibtex-tidy" },
 		lua = { "stylua" },
 		makrdown = { "mdformat" },
-		python = { "isort", "black" },
+		python = { "ruff", "black" },
 	},
 
 	format_on_save = function(bufnr)
