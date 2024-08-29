@@ -12,8 +12,8 @@ alias ga='git add'
 
 alias gd='git diff'
 
+alias gf='git fetch'
 alias gcm='git checkout main; git pull'
-
 alias grpo='git remote prune origin'
 
 # Python
