@@ -1,6 +1,6 @@
 # SSH keychain.
 if [[ $(uname) == "Darwin" ]]; then
-    $(brew --prefix)/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
+    $(brew --prefix)/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood ~/.ssh/google_compute_engine
 elif [[ $(uname -r | grep "WSL") ]]; then
     /usr/bin/keychain --quiet ~/.ssh/git-private ~/.ssh/git-forgood
 fi
@@ -80,5 +80,11 @@ if [[ $(uname -r | grep "WSL") ]]; then
     source $ZDOTDIR/.wsl
 fi
 
-# Shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+if [[ $(uname) == "Darwin" ]]; then
+    # Shell command completion for gcloud.
+    if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+    #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+    export SDKMAN_DIR="$HOME/.sdkman"
+    [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi

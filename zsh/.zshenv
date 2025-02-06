@@ -32,3 +32,8 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 . "$HOME/.cargo/env"  # Load rust stuff
+
+# SSL Certs
+if [[ $(uname) == "Darwin" ]]; then
+    export SSL_CERT_FILE=$(python3.12 -c "import certifi; print(certifi.where())")
+fi
