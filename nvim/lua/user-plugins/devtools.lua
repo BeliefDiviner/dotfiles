@@ -3,6 +3,34 @@ return {
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 
+	-- LSP, linter, formatter tool installer.
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		config = function()
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					"bibtex-tidy",
+					"black",
+					"cmake-language-server",
+					"djlint",
+					"docker-compose-language-service",
+					"dockerfile-language-server",
+					"isort",
+					"jinja-lsp",
+					"latexindent",
+					"lua-language-server",
+					"mdformat",
+					"pyright",
+					"ruff",
+					"selene",
+					"stylua",
+					"taplo",
+					"vale",
+				},
+			})
+		end,
+	},
+
 	-- LSP Language Servers.
 	"neovim/nvim-lspconfig",
 
